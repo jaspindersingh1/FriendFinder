@@ -8,12 +8,12 @@ var path = require("path");
 
 // Sets up the Express App
 // =============================================================
-var app = express();
-var PORT = process.env.PORT || 8080;
+var apiRoutes = express.Router();
+// var PORT = process.env.PORT || 8080;
 
-// Sets up the Express app to handle data parsing
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+// Sets up the Express apiRoutes to handle data parsing
+apiRoutes.use(express.urlencoded({ extended: true }));
+apiRoutes.use(express.json());
 
 // Data Storage
 var userData = [
@@ -25,12 +25,12 @@ var userData = [
 ];
 
 // Basic route that sends the user first to the AJAX Page
-app.get("/api/friends", function(req, res) {
+apiRoutes.get("/api/friends", function(req, res) {
     // return res.json(userData);
     res.sendFile(path.join(__dirname, "../data/friends.js"))
 });
   
-app.post("/api/friends", function(req, res){
+apiRoutes.post("/api/friends", function(req, res){
 
   var newuserData = req.body;
 
@@ -47,6 +47,8 @@ app.post("/api/friends", function(req, res){
 
 // Starts the server to begin listening
 // =============================================================
-app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
-});
+// apiRoutes.listen(PORT, () => {
+//     console.log("App listening on PORT " + PORT);
+// });
+
+module.export = apiRoutes
