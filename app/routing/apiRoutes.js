@@ -51,4 +51,4 @@ apiRoutes.post("/api/friends", function(req, res){
 //     console.log("App listening on PORT " + PORT);
 // });
 
-module.export = apiRoutes
+module.export = apiRoutes;
