@@ -5,7 +5,7 @@
   "main": "/app/routing/htmlRoutes.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node htmlRoutes.js"
+    "start": "node ./app/routing/htmlRoutes.js"
   },
   "author": "Jaspinder Singh",
   "license": "ISC",
